@@ -472,7 +472,7 @@ class TestSandboxArreglos
         assertEquals( 2, sencillo.contarApariciones( "B" ), "No contó correctamente las cadenas con diferencias entre mayúsculas y minúsculas" );
         assertEquals( 0, sencillo.contarApariciones( "z" ), "No contó correctamente las cadenas que no están en el arreglo" );
 
-        sencillo.agregarCadena( "x" + 'y' + 'z' );
+        sencillo.agregarCadena( "x".concat( "y" ).concat( "z" ) );
         assertEquals( 1, sencillo.contarApariciones( "xyz" ), "No contó correctamente las cadenas" );
     }
 
@@ -535,9 +535,9 @@ class TestSandboxArreglos
     void testEncontrarEntero( )
     {
         int[] posiciones9 = sencillo.buscarEntero( 9 );
-        assertEquals( 2, posiciones9.length, "No encontró la posición correctamente: " + Arrays.toString( posiciones9 ) );
-        assertEquals( 0, posiciones9[ 0 ], "No encontró la posición correctamente: " + Arrays.toString( posiciones9 ) );
-        assertEquals( enterosSencillos.length - 1, posiciones9[ 1 ], "No encontró la posición correctamente: " + Arrays.toString( posiciones9 ) );
+        assertEquals( 2, posiciones9.length, "No encontró la posición correctamente: ".concat( Arrays.toString( posiciones9 ) ) );
+        assertEquals( 0, posiciones9[ 0 ], "No encontró la posición correctamente: ".concat( Arrays.toString( posiciones9 ) ) );
+        assertEquals( enterosSencillos.length - 1, posiciones9[ 1 ], "No encontró la posición correctamente: ".concat( Arrays.toString( posiciones9 ) ) );
 
         int[] posiciones8 = sencillo.buscarEntero( 8 );
         assertEquals( 2, posiciones8.length, "No encontró la posición correctamente" );
